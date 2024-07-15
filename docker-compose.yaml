@@ -1,0 +1,26 @@
+---
+
+version: '3.7'
+
+services:
+
+  caddy-cloudflaredns:
+    image: ndkprd/caddy-cloudflaredns:v0.0.1
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/data:/data
+      - ./caddy/config:/config
+    env_file:
+      - caddy/.env
+
+  whoami:
+    image: traefik/whoami
+    container_name: whoami
+    restart: unless-stopped
+    ports:
+      - 8081:80
