@@ -11,3 +11,17 @@ web-01.dev.ndkprd.com {
     reverse_proxy whoami:80
     encode gzip
 }
+
+web-02.dev.ndkprd.com {
+    tls itops.asdp@gmail.com {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+        dns_challenge_override_domain _acme-challenge.dev.ndkprd.my.id
+        resolvers 1.1.1.1 1.0.0.1
+        # Let's Encrypt staging directory, use this for testing, to
+        # mitigate being rate limited by Let's Encrypt.
+        # ca https://acme-staging-v02.api.letsencrypt.org/directory
+        ca https://acme-v02.api.letsencrypt.org/directory
+    }
+    reverse_proxy whoami:80
+    encode gzip
+}
