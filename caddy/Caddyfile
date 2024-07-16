@@ -1,7 +1,7 @@
-*.dev.asdp.id {
+web-01.dev.ndkprd.com {
     tls itops.asdp@gmail.com {
         dns cloudflare {env.CLOUDFLARE_API_TOKEN}
-        dns_challenge_override_domain _acme-challenge.dev.asdp.my.id
+        dns_challenge_override_domain _acme-challenge.dev.ndkprd.my.id
         resolvers 1.1.1.1 1.0.0.1
         # Let's Encrypt staging directory, use this for testing, to
         # mitigate being rate limited by Let's Encrypt.
