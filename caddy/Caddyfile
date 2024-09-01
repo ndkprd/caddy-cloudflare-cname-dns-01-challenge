@@ -1,5 +1,5 @@
 web-01.dev.ndkprd.com {
-    tls itops.asdp@gmail.com {
+    tls me@ndkprd.com {
         dns cloudflare {env.CLOUDFLARE_API_TOKEN}
         dns_challenge_override_domain _acme-challenge.dev.ndkprd.my.id
         resolvers 1.1.1.1 1.0.0.1
@@ -13,7 +13,7 @@ web-01.dev.ndkprd.com {
 }
 
 web-02.dev.ndkprd.com {
-    tls itops.asdp@gmail.com {
+    tls me@ndkprd.com {
         dns cloudflare {env.CLOUDFLARE_API_TOKEN}
         dns_challenge_override_domain _acme-challenge.dev.ndkprd.my.id
         resolvers 1.1.1.1 1.0.0.1
